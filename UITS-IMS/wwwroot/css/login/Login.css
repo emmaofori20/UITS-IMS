@@ -1,0 +1,147 @@
+﻿@import '../Variables/variables.css';
+
+.container {
+    display: grid;
+    grid-template-columns: 2.7fr 1fr;
+    height: 106vh;
+}
+
+.container_left {
+    background-image: url('../../images/knust entrance.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 47%;
+    background-color: #e7e7e7;
+    height: 100%;
+}
+
+/* .container_left img{
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 47%;
+    background-color: #e7e7e7;
+} */
+
+.container_right {
+    padding: 20% 23px;
+    display: block;
+    text-align: center;
+}
+
+    .container_right img {
+        height: 150px;
+        width: 280px;
+    }
+
+
+form {
+    height: 200px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+input {
+    width: 90%;
+    height: 40px;
+    margin: 10px;
+    padding: 5px;
+    border: 1px solid #00000042;
+}
+
+form button {
+    margin-top: 45px;
+    margin-left: 13px;
+    width: 90%;
+    height: 30px;
+    background: var(--primary-color);
+    border: none;
+    color: white;
+    transition: background 2s;
+    transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+button:hover {
+    background: rgb(67, 123, 228);
+    cursor: pointer;
+}
+
+
+
+form h4 {
+    /* margin: -5px 18px; */
+    padding: 0px 15px;
+    font-size: 12px;
+    text-align: left;
+    color: cornflowerblue;
+}
+
+.container_button {
+    margin-top: 80px;
+}
+
+    .container_button h3 {
+        font-size: 15px;
+        color: #00000060;
+    }
+
+@media only screen and (max-width: 1200px) {
+    .container {
+        grid-template-columns: 2fr 1fr;
+    }
+}
+
+@media only screen and (max-width: 990px) {
+    .container {
+        grid-template-columns: 2fr 1fr;
+    }
+
+    .container_left {
+        background-image: url('../../images/knust entrance.jpg');
+        background-size: cover;
+        /* background-repeat: no-repeat; */
+        background-position: 55%;
+        background-color: #e7e7e7;
+        height: 100%;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .container {
+        grid-template-columns: 2fr 1fr;
+    }
+
+    .container_left {
+        background-image: url('../../images/knust entrance.jpg');
+        background-size: cover;
+        /* background-repeat: no-repeat; */
+        background-position: 50% -12px;
+        background-color: #e7e7e7;
+        height: 100%;
+    }
+}
+
+@media only screen and (max-width: 770px) {
+    .container {
+        display: block
+    }
+
+    .container_left {
+        display: none;
+        background-image: url('../../images/knust entrance.jpg');
+        background-size: cover;
+        /* background-repeat: no-repeat; */
+        background-position: 50% -12px;
+        background-color: #e7e7e7;
+        height: 100%;
+    }
+
+    form h4 {
+        /* margin: -5px 33px; */
+        font-size: 12px;
+        padding: 0px 28px;
+        text-align: left;
+        color: var(--primary-color);
+    }
+}

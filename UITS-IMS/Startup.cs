@@ -28,22 +28,29 @@ namespace UITS_IMS
             }
 
             app.UseStaticFiles();
-            app.UseMvcWithDefaultRoute();
+/*            app.UseMvcWithDefaultRoute();
+*/            
             app.UseRouting();
 
-            app.Run(async (context) =>
-           {
-               await context.Response.WriteAsync("Hello World");
-
-           });
-
-         /*   app.UseEndpoints(endpoints =>
+            app.UseMvc(routes =>
             {
-                endpoints.MapGet("/", async context =>
-                {
-                    await context.Response.WriteAsync("Hello World!");
-                });
+                routes.MapRoute("default", "{controller=Login}/{action=Login}/{id?}");
+
+            });
+
+            /* app.Run(async (context) =>
+            {
+                await context.Response.WriteAsync("Hello World");
+
             });*/
+
+            /*   app.UseEndpoints(endpoints =>
+               {
+                   endpoints.MapGet("/", async context =>
+                   {
+                       await context.Response.WriteAsync("Hello World!");
+                   });
+               });*/
         }
     }
 }
