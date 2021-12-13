@@ -8,11 +8,12 @@ namespace UITS_IMS.Controllers
 {
     public class DashboardController : Controller
     {
+        ///CONSTRUCTOR
         public DashboardController()
         {
 
         }
-        public ViewResult Index()
+        public ViewResult Dashboard()
         {
             return View();
         }
