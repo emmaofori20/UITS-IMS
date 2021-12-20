@@ -5,11 +5,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using UITS_IMS.Models;
+//using UITS_IMS.Services;
 
 namespace UITS_IMS.Controllers
 {
     public class RequestController : Controller
     {
+        //private IEmployeeRequestService _employeeRequestService;
+
+        public RequestController()
+        {
+            //_employeeRequestService = employeeRequestService;
+        }
+
         // GET: RequestController
         public ActionResult Index()
         {
@@ -33,14 +41,17 @@ namespace UITS_IMS.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Index(EmployeeRequestModel model)
         {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
+            //try
+            //{
+            //    return RedirectToAction(nameof(Index));
+            //}
+            //catch
+            //{
+            //    return View();
+            //}
+            //_employeeRequestService.CreateEmployeeRequest(model);
+             return View();
+
         }
 
         // GET: RequestController/Edit/5
