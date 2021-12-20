@@ -57,19 +57,19 @@
                         <div class="w3_agileits_main_grid w3l_main_grid">
                             <span class="agileits_grid">
                                 <label>Primary Phone Number </label>
-                                <input type="text" name="Task" placeholder="Phone Number" >
+                                <input type="text" asp-for="Phone.ContactNumber" placeholder="Phone Number" >
                             </span>
                         </div>
                         <div class="w3_agileits_main_grid w3l_main_grid">
                             <span class="agileits_grid">
                                 <label>Secondary Phone Number </label>
-                                <input type="text" name="Task" placeholder="Phone Number">
+                                <input type="text" asp-for="Phone.ContactNumber" placeholder="Phone Number">
                             </span>
                         </div>
                         <div class="w3_agileits_main_grid w3l_main_grid">
                             <span class="agileits_grid">
                                 <label>Department </label>
-                                <select name="Department">
+                                <select name="Department" asp-for="Employee.Department">
                                     <option value="none" selected="">Select department</option>
                                     <option value="Ph">50</option>
                                     <option value="Po">100</option>
@@ -82,7 +82,7 @@
                         <div class="w3_agileits_main_grid w3l_main_grid">
                             <span class="agileits_grid">
                                 <label>Reason for Request </label>
-                                <textarea placeholder="e.g elections.." style="height:50px"></textarea>
+                                <textarea placeholder="e.g elections.." asp-for="Request.Description" style="height:50px"></textarea>
                             </span>
                         </div>
 
@@ -107,7 +107,7 @@
                                             <div id="childItems" class="items">
                                                 <div class="w3_agileits_main_grid w3l_main_grid">
                                                     <span class="agileits_grid">
-                                                        <select name="Department">
+                                                        <select asp-for="ProductOrder.ProductId">
                                                             <option value="none" selected="">Select item</option>
                                                             <option value="Ph">50</option>
                                                             <option value="Po">100</option>
@@ -121,7 +121,7 @@
                                                 <div style=" display: flex; align-items: center; justify-content: space-around; grid-gap: 20px">
                                                     <div class="w3_agileits_main_grid w3l_main_grid">
                                                         <span class="agileits_grid">
-                                                            <select name="Department">
+                                                            <select asp-for="ProductOrder.Quantity" >
                                                                 <option value="none" selected="">Quantity</option>
                                                                 <option value="Ph">50</option>
                                                                 <option value="Po">100</option>
@@ -159,7 +159,7 @@
                     </div>
 
 
-                    <div class="w3_main_grid" id="buttonSubmit">
+                    <div class="w3_main_grid" style="display:none;" id="buttonSubmit">
                         <div class="w3_main_grid_right">
                             <input type="submit" value="Submit">
                         </div>
@@ -190,7 +190,7 @@
             var newElem = ` <div id="childItems" class="items">
                                                 <div class="w3_agileits_main_grid w3l_main_grid">
                                                     <span class="agileits_grid">
-                                                        <select name="Department">
+                                                        <select asp-for="ProductOrder.ProductId">
                                                             <option value="none" selected="">Select item</option>
                                                             <option value="Ph">50</option>
                                                             <option value="Po">100</option>
@@ -204,7 +204,7 @@
                                                 <div style=" display: flex; align-items: center; justify-content: space-around; grid-gap: 20px">
                                                     <div class="w3_agileits_main_grid w3l_main_grid">
                                                         <span class="agileits_grid">
-                                                            <select name="Department">
+                                                            <select asp-for="ProductOrder.Quantity">
                                                                 <option value="none" selected="">Quantity</option>
                                                                 <option value="Ph">50</option>
                                                                 <option value="Po">100</option>
