@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using UITS_IMS.Models;
 
 namespace UITS_IMS.Controllers
 {
@@ -30,7 +31,7 @@ namespace UITS_IMS.Controllers
         // POST: RequestController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public ActionResult Index(EmployeeRequestModel model)
         {
             try
             {
