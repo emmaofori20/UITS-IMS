@@ -1,5 +1,5 @@
-﻿@*@model EmployeeRequestModel
-*@
+﻿@model EmployeeRequestModel
+
 @{ Layout = null;}
 
 
@@ -27,31 +27,31 @@
         <div class="main">
             <h1 class="w3layouts_head">Inventory Registration Form</h1>
             <div class="w3layouts_main_grid">
-                <form class="w3_form_post">
+                <form class="w3_form_post" method="post">
                     <div id="firstBlock">
                         <h1 style="font-size: 1.2rem"> Personal Information</h1>
                         <div class="w3_agileits_main_grid w3l_main_grid">
                             <span class="agileits_grid">
                                 <label>Surname </label>
-                                <input type="text" name="Task" placeholder="Your surname" >
+                                <input type="text" asp-for="Employee.LastName" placeholder="Your surname" >
                             </span>
                         </div>
                         <div class="w3_agileits_main_grid w3l_main_grid">
                             <span class="agileits_grid">
                                 <label>Other Names </label>
-                                <input type="text" name="Task" placeholder="Other Name" >
+                                <input type="text" asp-for="Employee.FirstName" placeholder="Other Name" >
                             </span>
                         </div>
                         <div class="w3_agileits_main_grid w3l_main_grid">
                             <span class="agileits_grid">
                                 <label>Email </label>
-                                <input type="text" name="Task" placeholder="Your Email">
+                                <input type="text" asp-for="Employee.Email" placeholder="Your Email">
                             </span>
                         </div>
                         <div class="w3_agileits_main_grid w3l_main_grid">
                             <span class="agileits_grid">
                                 <label>Position </label>
-                                <input type="text" name="Task" placeholder="Position">
+                                <input type="text" asp-for="Employee.Position" placeholder="Position">
                             </span>
                         </div>
                         <div class="w3_agileits_main_grid w3l_main_grid">
@@ -159,7 +159,7 @@
                     </div>
 
 
-                    <div class="w3_main_grid"  id="buttonSubmit">
+                    <div class="w3_main_grid" style="display:none;" id="buttonSubmit">
                         <div class="w3_main_grid_right">
                             <input type="submit" value="Submit">
                         </div>
