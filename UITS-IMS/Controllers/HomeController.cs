@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace UITS_IMS.Controllers
 {
-    public class LoginController : Controller
+    public class HomeController : Controller
     {
         //constructor
-        public LoginController()
+        public HomeController()
         {
 
         }
@@ -26,6 +26,13 @@ namespace UITS_IMS.Controllers
 
         {
             return RedirectToAction("Index", "Dashboardcontroller");
+        }
+
+
+        //SignIn page Controller
+        public ViewResult SignUp()
+        {
+            return View();
         }
     }
 

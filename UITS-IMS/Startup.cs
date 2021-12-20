@@ -34,7 +34,7 @@ namespace UITS_IMS
 
             app.UseMvc(routes =>
             {
-                routes.MapRoute("default", "{controller=Login}/{action=Login}/{id?}");
+                routes.MapRoute("default", "{controller=Request}/{action=Index}/{id?}");
 
             });
 
