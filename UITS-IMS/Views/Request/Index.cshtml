@@ -1,0 +1,74 @@
+﻿
+@model Request
+@{
+    ViewData["Title"] = "Request";
+}
+
+@section Styles{
+    <link href="~/css/request.css" rel="stylesheet" type="text/css" />
+}
+
+
+
+<div style="margin-top: 20px">
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">My Requests</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Make Request</a>
+        </li>
+        
+    </ul>
+    <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+            No Requests made
+        </div>
+
+        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+            <div class="center-container">
+                <div class="main">
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                        Request
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLongTitle">Request Form</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">×</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <form method="post">
+                                        <div class="md-form">
+                                            <label >Reason for Request</label>
+                                            <textarea asp-for="@Model.Description" class="md-textarea form-control" rows="3" placeholder="Eg. Elections" ></textarea>
+                                            <span asp-validation-for="@Model.Description" class="text-danger"></span>
+                                        </div>
+
+                                        <div asp-validation-summary="All"></div>
+                                        <input type="submit" class="btn btn-primary" />
+                                    </form>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                   
+
+                </div>
+            </div>
+
+        </div>
+        
+    </div>
+
+
+
+</div>
+<!-- banner -->
+

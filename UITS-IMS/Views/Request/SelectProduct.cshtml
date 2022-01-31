@@ -1,0 +1,130 @@
+﻿@model RequestViewModel
+@{
+    ViewData["Title"] = "Request";
+}
+
+@section Styles{
+    <link href="~/css/request.css" rel="stylesheet" type="text/css" />
+}
+
+
+<div >
+    <div style="margin: 20px 250px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Select Items</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form class="w3_form_post" method="post">
+                    <input  hidden asp-for="@Model.RequestId"/>
+
+                    <div id="secondBlock">
+                        <div class="content-w3ls">
+                            <div class="form-w3ls">
+                                <div class="content-wthree2">
+                                    <div class="Items_container">
+                                        <div style="width:100%"> 
+                                            <div class="item_heading">
+                                                <h4>Items</h4>
+                                                <h4>Quantity</h4>
+                                            </div>
+
+                                            <div id="itt" class="m-0">
+                                                <div id="childItems" class="items">
+                                                    <div class="w3_agileits_main_grid w3l_main_grid">
+                                                        <span class="agileits_grid">
+
+                                                            <select asp-items="@Model.Products" asp-for="@Model.ProductId" class="form-control">
+
+                                                                <option value="none" selected="">Select item</option>
+
+                                                            </select>
+                                                            <span asp-validation-for="@Model.ProductId" class="text-danger"></span>
+
+                                                        </span>
+                                                    </div>
+
+                                                    <div style=" display: flex; align-items: center; justify-content: space-around; grid-gap: 20px">
+                                                        <div class="w3_agileits_main_grid w3l_main_grid">
+                                                            <span class="agileits_grid">
+                                                                <input type="number" min="1" class="form-control" asp-for="@Model.Quantity" />
+                                                                <span asp-validation-for="@Model.Quantity" class="text-danger"></span>
+                                                            </span>
+                                                        </div>
+
+                                                        <div onclick="removeRow(this)" style="padding: 5px; cursor: pointer; background-color: #dd6363; width: 20px; text-align: center; ">
+                                                            <span style="color: white;">X</span>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                        <div onclick="addItems()" style=" width: 80px; padding: 10px 0;">
+                                            <span style=" color:black; text-transform:none; cursor:pointer; display: flex; align-items: center; grid-gap: 10px; font-size: 16px; padding: 10px 5px; border-radius: 10px; ">
+                                                <i class="fa fa-plus-circle"></i>
+                                                Add
+                                            </span>
+                                        </div>
+
+
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+
+                    <div class="w3_main_grid" id="buttonSubmit">
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+                        <input type="submit" value="Submit" class="btn btn-primary">
+
+                    </div>
+                </form>
+
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+<!--<script src="~/js/script.js"></script>-->
+<script>
+    const firstblock = document.getElementById('firstBlock');
+    const secondblock = document.getElementById('secondBlock');
+
+    function myFunction() {
+        firstblock.style.display = "none";
+        secondblock.style.display = "block";
+        // document.getElementById('buttonSubmit').style.display = 'block';
+    }
+
+    function addItems() {
+        console.log("items add");
+        const block = document.getElementById('childItems');
+        var clone = block.cloneNode(true);
+
+        document.getElementById("itt").appendChild(clone)
+
+    }
+
+    function removeRow(input) {
+        console.log("this is the input", input.parentNode.parentNode);
+        var item = document.getElementById("childItems");
+        document.getElementById('itt').removeChild(input.parentNode.parentNode);
+    }
+
+</script>
+
